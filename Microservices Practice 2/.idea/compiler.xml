@@ -25,6 +25,15 @@
         <module name="ActionServiceApplicationWithInterceptors" />
         <module name="ActionServiceApplicationWIthRetryLogic" />
       </profile>
+      <profile name="Annotation profile for SecurityServiceApplication" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="SecurityServiceApplication" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ServiceRegistryApplication" target="17" />
@@ -39,6 +48,7 @@
       <module name="ActionServiceWithRestTemplate" options="-parameters" />
       <module name="QueryServiceApplication" options="-parameters" />
       <module name="QueryServiceApplicationWithInterceptors" options="-parameters" />
+      <module name="SecurityServiceApplication" options="-parameters" />
       <module name="ServiceDiscoveryApplication" options="-parameters" />
       <module name="ServiceRegistryApplication" options="-parameters" />
     </option>

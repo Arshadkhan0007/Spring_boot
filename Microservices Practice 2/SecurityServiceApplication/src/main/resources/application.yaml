@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: SecurityServiceApplication
+
+security:
+  secret-key: c2l0dGluZ2RyaW5rZWFydGhjZW50cmFsYml0eWFyZG1ha2ViYXNlcmVhbGl6ZWFib2E=

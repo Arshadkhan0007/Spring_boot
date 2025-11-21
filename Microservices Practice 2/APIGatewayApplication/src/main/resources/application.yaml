@@ -10,6 +10,17 @@ spring:
       server:
         webflux:
           routes:
+
+            - id: action_rest_service_route
+              uri: lb://ACTION-REST-SERVICE
+              predicates:
+                - Path=/action/rest-template/**
+
+            - id: action_interceptor_service_route
+              uri: lb://ACTION-SERVICE-WITH-INTERCEPTOR
+              predicates:
+                  - Path=/action/interceptors/**
+
             - id: action_service_route
               uri: lb://ACTION-SERVICE
               predicates:
@@ -21,15 +32,11 @@ spring:
               predicates:
                 - Path=/query/**
                 - Method=GET
-
-            - id: action_rest_service_route
-              uri: lb://ACTION-REST-SERVICE
-              predicates:
-                - Path=/action/rest-template/**
-                - Method=POST, PUT, DELETE, GET
-
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8090/eureka/
+
+security:
+  secret-key: c2l0dGluZ2RyaW5rZWFydGhjZW50cmFsYml0eWFyZG1ha2ViYXNlcmVhbGl6ZWFib2E=
 
